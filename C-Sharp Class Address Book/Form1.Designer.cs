@@ -88,6 +88,7 @@
             this.deleteButton.TabIndex = 38;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // contactLabel
             // 
@@ -147,6 +148,7 @@
             this.editButton.TabIndex = 28;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // phoneBox
             // 

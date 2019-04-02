@@ -33,7 +33,7 @@ namespace C_Sharp_Class_Address_Book
             Portal portal = new Portal();
             portal.Save(contact);
 
-            MessageBox.Show("Saved");
+            MessageBox.Show("Contact information has been saved");
 
             nameBox.Text = "";
             phoneBox.Text = "";
@@ -59,6 +59,39 @@ namespace C_Sharp_Class_Address_Book
             cityBox.Text = contact.City.ToString();
             stateBox.Text = contact.State.ToString();
             zipBox.Text = contact.Zip.ToString();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            Contacts contact = new Contacts();
+            contact.Name = nameBox.Text;
+            contact.Phone = phoneBox.Text;
+            contact.Street = streetBox.Text;
+            contact.City = cityBox.Text;
+            contact.State = stateBox.Text;
+            contact.Zip = zipBox.Text;
+
+            Portal portal = new Portal();
+            portal.Update(contact);
+
+            MessageBox.Show("Contact information has been updated");
+
+            nameBox.Text = "";
+            phoneBox.Text = "";
+            streetBox.Text = "";
+            cityBox.Text = "";
+            stateBox.Text = "";
+            zipBox.Text = "";
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Contacts contact = new Contacts();
+            contact.Name = nameBox.Text;
+
+            Portal portal = new Portal();
+            portal.Delete(contact);
+            MessageBox.Show("Contact has been deleted.");
         }
     }
 }
